@@ -34,7 +34,7 @@ def backwardElimination(x,sl):
             for j in range(0,numVars-i):
                 if(regressor_OLS.pvalues[j].astype(float)==maxVar):
                     x=np.delete(x,j,axis=1)
-        print(regressor_OLS.summary())
+        #print(regressor_OLS.summary())
     print(regressor_OLS.summary())
     return x
 
@@ -70,9 +70,8 @@ ax.scatter(y_test,y_pred)
 #ax.set_x_label('Measured')
 #ax.set_y_label('Predicted')
 ax.plot([y_test.min(),y_test.max()],[y_pred.min(),y_pred.max()],'k--',lw=4)
-
-
+ax.set_title('Actual(X) vs Predicted(Y)')
 fig.show()
-
+plt.savefig('Actual vs Predicted.jpg')
 
 
